@@ -1,0 +1,17 @@
+{
+  "product": "PF_shoppingList_main",
+  "version": "0.1.0",
+  "license": "License Commercial",
+  "description": {
+    "en": "",
+    "cs": ""
+  },
+  "devkit": {
+    "development": {
+      "appBoxLocationUri": "----- VALUE REQUIRED -----",
+      "appDeploymentUri": null
+    }
+  },
+  "PF_shoppingList_main-hi": {},
+  "PF_shoppingList_main-server": {}
+}
