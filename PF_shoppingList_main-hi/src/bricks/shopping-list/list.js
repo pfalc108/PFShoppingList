@@ -25,13 +25,16 @@ const List = createComponent({
   render(props) {
     //@@viewOn:private
     const { children } = props;
+
     //@@viewOff:private
 
     //@@viewOn:interface
     //@@viewOff:interface
 
     //@@viewOn:render
-    return children ?? null;
+    return (
+      <ul></ul>
+    );
     //@@viewOff:render
   },
 });

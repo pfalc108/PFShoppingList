@@ -2,9 +2,14 @@
 import { createVisualComponent, Utils, Content } from "uu5g05";
 import Config from "./config/config.js";
 import { withRoute } from "uu_plus4u5g02-app";
+import Detail from "../bricks/shopping-list/detail.js";
+import RouteBar from "../core/route-bar.js";
 //@@viewOff:imports
 
 //@@viewOn:constants
+const SLData = {
+  "name": "Dnesni nakup",
+}
 //@@viewOff:constants
 
 //@@viewOn:css
@@ -39,15 +44,14 @@ let ShoppingList = createVisualComponent({
     //@@viewOff:interface
 
     //@@viewOn:render
-    const attrs = Utils.VisualComponent.getAttrs(props, Css.main());
-    const currentNestingLevel = Utils.NestingLevel.getNestingLevel(props, ShoppingList);
-
-    return currentNestingLevel ? (
-      <div {...attrs}>
-        <div>Visual Component {ShoppingList.uu5Tag}</div>
-        <Content nestingLevel={currentNestingLevel}>{children}</Content>
-      </div>
-    ) : null;
+    return (
+      <>
+        <RouteBar />
+        <Detail 
+          name={SLData.name}
+        />
+      </>
+    );
     //@@viewOff:render
   },
 });

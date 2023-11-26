@@ -1,6 +1,7 @@
 //@@viewOn:imports
 import { createComponent } from "uu5g05";
 import Config from "./config/config.js";
+import { Text, Box } from "uu5g05-elements";
 //@@viewOff:imports
 
 //@@viewOn:constants
@@ -31,7 +32,13 @@ const Owner = createComponent({
     //@@viewOff:interface
 
     //@@viewOn:render
-    return children ?? null;
+    return (
+      <Box style={{ width: 640, margin: "24px auto" }}>
+        <Text category="interface" segment="title" type="minor" colorScheme="building">
+          Owner: Petr Falc
+        </Text>
+      </Box>
+    );
     //@@viewOff:render
   },
 });
