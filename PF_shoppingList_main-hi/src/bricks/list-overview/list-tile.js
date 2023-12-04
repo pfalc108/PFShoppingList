@@ -1,5 +1,5 @@
 //@@viewOn:imports
-import { createVisualComponent, Utils, Content } from "uu5g05";
+import { createVisualComponent, Utils, Content, useSession, useScreenSize } from "uu5g05";
 import Config from "./config/config.js";
 import Uu5TilesElements from "uu5tilesg02-elements";
 import Uu5Elements from "uu5g05-elements";
@@ -9,9 +9,6 @@ import Uu5Elements from "uu5g05-elements";
 //@@viewOff:constants
 
 //@@viewOn:css
-const Css = {
-  main: () => Config.Css.css({}),
-};
 //@@viewOff:css
 
 //@@viewOn:helpers
@@ -35,6 +32,22 @@ const ListTile = createVisualComponent({
     //@@viewOn:private
     const { a } = Uu5Elements.useSpacing();
     const { data, ...otherProps } = props;
+    const handleDelete = (e) => {
+      let newListData = props.listdata;
+      console.log(e)
+      console.log(newListData)
+      newListData = newListData.filter(obj => obj.id !== e.data.id);
+      console.log(newListData)
+      props.setData(newListData);
+    }    
+    const handleRename = (e) => {
+      let newListData = props.listdata;
+      console.log(e)
+      console.log(newListData)
+      newListData = newListData.filter(obj => obj.id !== e.data.id);
+      console.log(newListData)
+      props.setData(newListData);
+    }
     //@@viewOff:private
 
     //@@viewOn:interface
@@ -43,11 +56,21 @@ const ListTile = createVisualComponent({
     //@@viewOn:render
 
     return (
-      <Uu5TilesElements.Tile header={<>
-          {data.name}
-          <Uu5Elements.Button size="xs" icon="mdi-delete" />
-        </>
-        }>
+      <Uu5TilesElements.Tile 
+          header={<>
+            {data.name}
+          </>} 
+          actionList={[
+            {
+              icon: "uugds-pencil",
+              onClick: (e) => {handleDelete(props)},
+            },
+            {
+              icon: "uugds-delete",
+              onClick: (e) => {handleRename(props)},
+            }
+          ]}
+      >
           <Uu5Elements.Text
             significance="subdued"
             colorScheme="building"
@@ -64,6 +87,23 @@ const ListTile = createVisualComponent({
             className={Config.Css.css({ justifySelf: "start" })}
           >
             {data.owner.name}
+          </Uu5Elements.Text>
+          <Uu5Elements.Text
+            significance="subdued"
+            colorScheme="building"
+            category="story"
+            segment="body"
+            type="minor"
+          >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Archived:{' '}
+          </Uu5Elements.Text>
+          <Uu5Elements.Text
+            category="story"
+            segment="body"
+            type="minor"
+            className={Config.Css.css({ justifySelf: "start" })}
+          >
+            {data.archived.toString()}
           </Uu5Elements.Text>
       </Uu5TilesElements.Tile>
     );

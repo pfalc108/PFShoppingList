@@ -52,7 +52,6 @@ const Overview1 = createComponent({
         key: "archived",
         label: "Hide archived",
         filter: (item, value) => {
-          console.log(item)
           if (value) {
             let itemArchived = typeof item.archived === "object" ? Utils.Language.getItem(item.archived) : item.archived;
             return !itemArchived;
@@ -62,8 +61,6 @@ const Overview1 = createComponent({
         inputType: "bool",
       },
     ];
-
-
 
     const SERIE_LIST = [
       { value: "name", label: "Název:" },
@@ -92,8 +89,14 @@ const Overview1 = createComponent({
           <Uu5Elements.Block actionList={[{ component: <Uu5TilesControls.FilterButton type="bar" displayType="button" /> }]}>            
               <Uu5TilesControls.FilterBar initialExpanded />
               <Uu5TilesControls.FilterManagerModal />
-              <Uu5TilesElements.Grid>
-                  <ListTile />
+              <Uu5TilesElements.Grid
+                  rowSpacing={8}
+                  tileHeight={300}
+                  tileMinWidth={400}
+                  tileMaxWidth={800}
+                  tileSpacing={8}
+              >
+                  <ListTile listdata={ listdata } setData={ setData } />
               </Uu5TilesElements.Grid>
           </Uu5Elements.Block>
       </Uu5Tiles.ControllerProvider>

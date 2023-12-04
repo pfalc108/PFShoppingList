@@ -1,5 +1,5 @@
 //@@viewOn:imports
-import { createVisualComponent, useState } from "uu5g05";
+import { createVisualComponent, useState, useSession, useScreenSize } from "uu5g05";
 import Config from "./config/config.js";
 import { withRoute } from "uu_plus4u5g02-app";
 import { RouteBar } from "../core/route-bar.js";
@@ -45,7 +45,26 @@ const user = {
 
 //@@viewOn:css
 const Css = {
-  main: () => Config.Css.css({}),
+  container: (screenSize) => {
+    let maxWidth;
+
+    switch (screenSize) {
+      case "xs":
+      case "s":
+        maxWidth = "100%";
+        break;
+      case "m":
+      case "l":
+        maxWidth = 640;
+        break;
+      case "xl":
+      default:
+        maxWidth = 1280;
+    }
+
+    return Config.Css.css({ maxWidth: maxWidth, margin: "0px auto", paddingLeft: 8, paddingRight: 8 });
+  },
+  createView: () => Config.Css.css({ margin: "24px 0px" }),
 };
 //@@viewOff:css
 
@@ -69,6 +88,7 @@ let ListOverview = createVisualComponent({
   render(props) {
     //@@viewOn:private
     const [listdata, setData] = useState(TestData);
+    const [screenSize] = useScreenSize();
     //@@viewOff:private
 
     //@@viewOn:interface
@@ -78,8 +98,10 @@ let ListOverview = createVisualComponent({
 
     return (
       <>
+        <div className={Css.container(screenSize)}>
         <RouteBar />
         <Overview1 listdata={listdata} setData={setData} user={user} />
+        </div>
       </>
     );
     //@@viewOff:render
