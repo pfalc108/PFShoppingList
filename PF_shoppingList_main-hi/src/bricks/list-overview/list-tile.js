@@ -32,22 +32,16 @@ const ListTile = createVisualComponent({
   render(props) {
     //@@viewOn:private
     const { a } = Uu5Elements.useSpacing();
-    const { data, ...otherProps } = props;
+    const { data } = props;
     const handleDelete = (e) => {
       let newListData = props.listdata;
-      console.log(e)
-      console.log(newListData)
       newListData = newListData.filter(obj => obj.id !== e.data.id);
-      console.log(newListData)
       props.setData(newListData);
     }
 
     const handleRename = (e) => {
       let newListData = props.listdata;
-      console.log(e)
-      console.log(newListData)
       newListData = newListData.filter(obj => obj.id !== e.data.id);
-      console.log(newListData)
       props.setData(newListData);
     }
 
