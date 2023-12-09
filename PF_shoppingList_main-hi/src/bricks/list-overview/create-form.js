@@ -1,5 +1,5 @@
 //@@viewOn:imports
-import { createVisualComponent, Utils, Content } from "uu5g05";
+import { createVisualComponent } from "uu5g05";
 import Config from "./config/config.js";
 import Uu5Forms from "uu5g05-forms";
 import Uu5Elements from "uu5g05-elements";
@@ -9,9 +9,6 @@ import Uu5Elements from "uu5g05-elements";
 //@@viewOff:constants
 
 //@@viewOn:css
-const Css = {
-  main: () => Config.Css.css({}),
-};
 //@@viewOff:css
 
 //@@viewOn:helpers
@@ -34,17 +31,22 @@ const CreateForm = createVisualComponent({
   render(props) {
     //@@viewOn:private
     const handleSubmit = (e) => {
-      const newShoppingList = {};
       let newListData = props.listdata;
-      newShoppingList.id = Math.trunc(Math. random() * 1000);
-      newShoppingList.name = e.data.value.name;
-      newShoppingList.owner = props.user;
-      newShoppingList.member = [props.user];
-      newShoppingList.archived = false;
-      newListData.push(newShoppingList);
+    if (props.itemId === 0) {
+        const newShoppingList = {};
+        newShoppingList.id = Math.trunc(Math. random() * 1000);
+        newShoppingList.name = e.data.value.name;
+        newShoppingList.owner = props.user;
+        newShoppingList.member = [props.user];
+        newShoppingList.archived = false;
+        newListData.push(newShoppingList);
+      } else {
+        const idx = newListData.findIndex(x => x.id === props.itemId);
+        newListData[idx].name = e.data.value.name;
+      }
       props.setData(newListData);
     }
-    
+
     //@@viewOff:private
 
     //@@viewOn:interface
@@ -61,8 +63,8 @@ const CreateForm = createVisualComponent({
             props.onClose();
           }}
         >
-          <Uu5Elements.Modal 
-            header="Create new shopping list" 
+          <Uu5Elements.Modal
+            header={props.header}
             footer={
                     <Uu5Elements.Grid
                       templateColumns={{ xs: "repeat(2, 1fr)", s: "repeat(2, auto)" }}
@@ -77,7 +79,7 @@ const CreateForm = createVisualComponent({
             >
             <Uu5Forms.Form.View>
               <div>
-                <Uu5Forms.FormText name="name" label="New shopping list name" placeholder="Enter the name" required />
+                <Uu5Forms.FormText name="name" label="New shopping list name" placeholder="Enter the name" initialValue={props.defaultText} required />
               </div>
             </Uu5Forms.Form.View>
           </Uu5Elements.Modal>

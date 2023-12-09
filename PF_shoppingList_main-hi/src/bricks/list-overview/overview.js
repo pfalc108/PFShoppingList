@@ -6,16 +6,13 @@ import Uu5Tiles from "uu5tilesg02";
 import Uu5TilesControls from "uu5tilesg02-controls";
 import Uu5TilesElements from "uu5tilesg02-elements";
 import ListTile from "./list-tile.js";
-import CreateForm from "./create-form.js"
+import CreateForm from "./create-form.js";
 //@@viewOff:imports
 
 //@@viewOn:constants
 //@@viewOff:constants
 
 //@@viewOn:css
-const Css = {
-  main: () => Config.Css.css({}),
-};
 //@@viewOff:css
 
 //@@viewOn:helpers
@@ -46,7 +43,6 @@ const Overview1 = createComponent({
     //@@viewOn:render
     const [activeFilterList, setActiveFilterList] = useState([{ key: "archived", value: [true] }]);
     const DATA = listdata;
-    const LOCATION_LIST = [];
     const FILTER_DEFINITION_LIST = [
       {
         key: "archived",
@@ -76,17 +72,17 @@ const Overview1 = createComponent({
         data={DATA}
         filterDefinitionList={FILTER_DEFINITION_LIST}
         filterList={activeFilterList}
-        onFilterChange={(e) => setActiveFilterList(e.data.filterList)}  
-        serieList={SERIE_LIST}      
+        onFilterChange={(e) => setActiveFilterList(e.data.filterList)}
+        serieList={SERIE_LIST}
       >
           {/* Top bar with Create new shop list button */}
           <Uu5Elements.Box>
               <Uu5Elements.Button onClick={() => setOpen(true)} size="xs" icon="mdi-plus-box">Create new shopping list</Uu5Elements.Button>
-              <CreateForm open={open} onClose={() => setOpen(false)} listdata={ listdata } setData={ setData } user={user} />
+              <CreateForm open={open} onClose={() => setOpen(false)} listdata={ listdata } setData={ setData } user={user} itemId={0} defaultText="" header="Create new shopping list" />
           </Uu5Elements.Box>
 
           {/* Grid to display Shopping Lists including Filter for non-Archived only */}
-          <Uu5Elements.Block actionList={[{ component: <Uu5TilesControls.FilterButton type="bar" displayType="button" /> }]}>            
+          <Uu5Elements.Block actionList={[{ component: <Uu5TilesControls.FilterButton type="bar" displayType="button" /> }]}>
               <Uu5TilesControls.FilterBar initialExpanded />
               <Uu5TilesControls.FilterManagerModal />
               <Uu5TilesElements.Grid
@@ -96,7 +92,7 @@ const Overview1 = createComponent({
                   tileMaxWidth={800}
                   tileSpacing={8}
               >
-                  <ListTile listdata={ listdata } setData={ setData } />
+                  <ListTile listdata={ listdata } setData={ setData } user={ user } />
               </Uu5TilesElements.Grid>
           </Uu5Elements.Block>
       </Uu5Tiles.ControllerProvider>
