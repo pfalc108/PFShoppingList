@@ -42,6 +42,52 @@ const Calls = {
   getCommandUri(useCase, baseUri = Environment.appBaseUri) {
     return (!baseUri.endsWith("/") ? baseUri + "/" : baseUri) + (useCase.startsWith("/") ? useCase.slice(1) : useCase);
   },
+
+  shoppingList: {
+    create(dtoIn) {
+      const commandUri = Calls.getCommandUri("shoppingList/create");
+      return Calls.call("post", commandUri, dtoIn);
+    },
+    get(dtoIn) {
+      const commandUri = Calls.getCommandUri("shoppingList/get");
+      return Calls.call("get", commandUri, dtoIn);
+    },
+    list(dtoIn) {
+      const commandUri = Calls.getCommandUri("shoppingList/list");
+      return Calls.call("get", commandUri, dtoIn);
+    },
+    update(dtoIn) {
+      const commandUri = Calls.getCommandUri("shoppingList/update");
+      return Calls.call("post", commandUri, dtoIn);
+    },
+    delete(dtoIn) {
+      const commandUri = Calls.getCommandUri("shoppingList/delete");
+      return Calls.call("post", commandUri, dtoIn);
+    },
+  },
+
+  listItem: {
+    create(dtoIn) {
+      const commandUri = Calls.getCommandUri("listItem/create");
+      return Calls.call("post", commandUri, dtoIn);
+    },
+    get(dtoIn) {
+      const commandUri = Calls.getCommandUri("listItem/get");
+      return Calls.call("get", commandUri, dtoIn);
+    },
+    list(dtoIn) {
+      const commandUri = Calls.getCommandUri("listItem/list");
+      return Calls.call("get", commandUri, dtoIn);
+    },
+    update(dtoIn) {
+      const commandUri = Calls.getCommandUri("listItem/update");
+      return Calls.call("post", commandUri, dtoIn);
+    },
+    delete(dtoIn) {
+      const commandUri = Calls.getCommandUri("listItem/delete");
+      return Calls.call("post", commandUri, dtoIn);
+    },
+  }
 };
 
 export default Calls;

@@ -1,0 +1,164 @@
+{
+  "itemList": [
+    {
+      "id": "61e1556d17f0e248baf15f4b",
+      "awid": "583ebf71c50ed33d7c03dda9",
+      "sys": {
+        "cts": "2022-01-14 10:50:21.637Z",
+        "mts": "2022-01-14 10:50:42.542Z",
+        "rev": 0
+      },
+      "uuOwnerIdentity": "28-4322-1",
+      "uuOwnerIdentityName": "Paul Surname",
+      "uuMemberIdentityList": ["28-4322-1"],
+      "uuMemberIdentityNameList": ["Paul Surname"],
+      "name": "Monday shopping list",
+      "itemIdList": ["61e1554617f0e248baf15f42"],
+      "archived": false
+    },
+    {
+      "id": "61e1a2f617f0e248baf15f4c",
+      "awid": "583ebf71c50ed33d7c03dda8",
+      "sys": {
+        "cts": "2023-12-10 15:30:45.123Z",
+        "mts": "2023-12-10 15:31:10.987Z",
+        "rev": 1
+      },
+      "uuOwnerIdentity": "42-8765-3",
+      "uuOwnerIdentityName": "Alice Johnson",
+      "uuMemberIdentityList": ["42-8765-3"],
+      "uuMemberIdentityNameList": ["Alice Johnson"],
+      "name": "Tuesday task list",
+      "itemIdList": ["61e1a2f617f0e248baf15f4d"],
+      "archived": false
+    },
+    {
+      "id": "61e1a2f717f0e248baf15f4e",
+      "awid": "583ebf71c50ed33d7c03dda7",
+      "sys": {
+        "cts": "2023-12-10 15:32:15.987Z",
+        "mts": "2023-12-10 15:32:40.654Z",
+        "rev": 2
+      },
+      "uuOwnerIdentity": "56-3098-2",
+      "uuOwnerIdentityName": "Emily Smith",
+      "uuMemberIdentityList": ["56-3098-2"],
+      "uuMemberIdentityNameList": ["Emily Smith"],
+      "name": "Wednesday meeting agenda",
+      "itemIdList": ["61e1a2f717f0e248baf15f4f"],
+      "archived": false
+    },
+    {
+      "id": "61e1a3a717f0e248baf15f50",
+      "awid": "583ebf71c50ed33d7c03ddb0",
+      "sys": {
+        "cts": "2023-12-10 16:45:30.825Z",
+        "mts": "2023-12-10 16:45:55.712Z",
+        "rev": 1
+      },
+      "uuOwnerIdentity": "37-7890-4",
+      "uuOwnerIdentityName": "Emma Johnson",
+      "uuMemberIdentityList": ["37-7890-4"],
+      "uuMemberIdentityNameList": ["Emma Johnson"],
+      "name": "Tuesday grocery list",
+      "itemIdList": ["61e1a3a717f0e248baf15f51"],
+      "archived": false
+    },
+    {
+      "id": "61e1a4b117f0e248baf15f52",
+      "awid": "583ebf71c50ed33d7c03ddb1",
+      "sys": {
+        "cts": "2023-12-10 17:55:12.431Z",
+        "mts": "2023-12-10 17:55:35.876Z",
+        "rev": 2
+      },
+      "uuOwnerIdentity": "54-1234-5",
+      "uuOwnerIdentityName": "Sophie Anderson",
+      "uuMemberIdentityList": ["54-1234-5"],
+      "uuMemberIdentityNameList": ["Sophie Anderson"],
+      "name": "Wednesday to-do list",
+      "itemIdList": ["61e1a4b117f0e248baf15f53"],
+      "archived": false
+    },
+    {
+      "id": "61e1a5c117f0e248baf15f54",
+      "awid": "583ebf71c50ed33d7c03ddb2",
+      "sys": {
+        "cts": "2023-12-10 18:45:58.123Z",
+        "mts": "2023-12-10 18:46:20.987Z",
+        "rev": 3
+      },
+      "uuOwnerIdentity": "76-5678-9",
+      "uuOwnerIdentityName": "Michael Johnson",
+      "uuMemberIdentityList": ["76-5678-9"],
+      "uuMemberIdentityNameList": ["Michael Johnson"],
+      "name": "Thursday project tasks",
+      "itemIdList": ["61e1a5c117f0e248baf15f55"],
+      "archived": false
+    },
+    {
+      "id": "61e1a6d717f0e248baf15f56",
+      "awid": "583ebf71c50ed33d7c03ddb3",
+      "sys": {
+        "cts": "2023-12-10 19:55:42.789Z",
+        "mts": "2023-12-10 19:56:05.654Z",
+        "rev": 4
+      },
+      "uuOwnerIdentity": "89-2345-6",
+      "uuOwnerIdentityName": "Olivia Davis",
+      "uuMemberIdentityList": ["89-2345-6"],
+      "uuMemberIdentityNameList": ["Olivia Davis"],
+      "name": "Friday goals",
+      "itemIdList": ["61e1a6d717f0e248baf15f57"],
+      "archived": false
+    },
+    {
+      "id": "61e1a7e417f0e248baf15f58",
+      "awid": "583ebf71c50ed33d7c03ddb4",
+      "sys": {
+        "cts": "2023-12-10 20:45:30.123Z",
+        "mts": "2023-12-10 20:46:02.987Z",
+        "rev": 5
+      },
+      "uuOwnerIdentity": "91-8765-2",
+      "uuOwnerIdentityName": "Sophia Miller",
+      "uuMemberIdentityList": ["91-8765-2"],
+      "uuMemberIdentityNameList": ["Sophia Miller"],
+      "name": "Weekend plans",
+      "itemIdList": ["61e1a7e417f0e248baf15f59"],
+      "archived": false
+    },
+    {
+      "id": "61e1a8f817f0e248baf15f5a",
+      "awid": "583ebf71c50ed33d7c03ddb5",
+      "sys": {
+        "cts": "2023-12-10 21:55:18.234Z",
+        "mts": "2023-12-10 21:55:42.876Z",
+        "rev": 6
+      },
+      "uuOwnerIdentity": "47-5678-3",
+      "uuOwnerIdentityName": "Liam Wilson",
+      "uuMemberIdentityList": ["47-5678-3"],
+      "uuMemberIdentityNameList": ["Liam Wilson"],
+      "name": "Saturday fitness goals",
+      "itemIdList": ["61e1a8f817f0e248baf15f5b"],
+      "archived": false
+    },
+    {
+      "id": "61e1aa0717f0e248baf15f5c",
+      "awid": "583ebf71c50ed33d7c03ddb6",
+      "sys": {
+        "cts": "2023-12-10 22:45:54.345Z",
+        "mts": "2023-12-10 22:46:20.210Z",
+        "rev": 7
+      },
+      "uuOwnerIdentity": "65-1234-9",
+      "uuOwnerIdentityName": "Isabella Taylor",
+      "uuMemberIdentityList": ["65-1234-9"],
+      "uuMemberIdentityNameList": ["Isabella Taylor"],
+      "name": "Sunday relaxation plans",
+      "itemIdList": ["61e1aa0717f0e248baf15f5d"],
+      "archived": false
+    }
+  ]
+}

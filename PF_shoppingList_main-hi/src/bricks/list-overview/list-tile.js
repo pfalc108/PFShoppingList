@@ -4,6 +4,7 @@ import Config from "./config/config.js";
 import Uu5TilesElements from "uu5tilesg02-elements";
 import Uu5Elements from "uu5g05-elements";
 import CreateForm from "./create-form.js";
+import shoppingList from "../../routes/shopping-list";
 //@@viewOff:imports
 
 //@@viewOn:constants
@@ -46,7 +47,7 @@ const ListTile = createVisualComponent({
     }
 
     const ownership = (props,data) => {
-      if (data.owner.name === props.user.name) {
+      if (data.data.uuOwnerIdentityName === props.user.name) {
         return               [{
             icon: "uugds-pencil",
             onClick: () => setOpen(true),
@@ -71,9 +72,10 @@ const ListTile = createVisualComponent({
     return (
       <Uu5TilesElements.Tile
           header={<>
-            {data.name}
+            {data.data.name}
           </>}
           actionList={ownership(props,data)}
+          displayActionList={true}
       >
           <Uu5Elements.Text
             significance="subdued"
@@ -90,7 +92,7 @@ const ListTile = createVisualComponent({
             type="minor"
             className={Config.Css.css({ justifySelf: "start" })}
           >
-            {data.owner.name}
+            {data.data.uuOwnerIdentityName}
           </Uu5Elements.Text>
           <Uu5Elements.Text
             significance="subdued"
@@ -107,15 +109,15 @@ const ListTile = createVisualComponent({
             type="minor"
             className={Config.Css.css({ justifySelf: "start" })}
           >
-            {data.archived.toString()}
+            {data.data.archived.toString()}
           </Uu5Elements.Text>
-          <CreateForm open={open} onClose={() => setOpen(false)} listdata={ props.listdata } setData={ props.setData } user={props.user} itemId={props.data.id} defaultText={props.data.name} header={"Rename shopping list"} />
+          <CreateForm open={open} onClose={() => setOpen(false)} listdata={ props.listdata } user={props.user} itemId={props.shoppingListDataList.data.id} defaultText={props.shoppingListDataList.data.name} header={"Rename shopping list"} />
           <Uu5Elements.Dialog
             open={open2}
             onClose={() => setOpen2(false)}
             header={"Delete this shopping list?"}
             icon={<Uu5Elements.Svg code="uugdssvg-svg-delete" />}
-            info={data.name}
+            info={data.data.name}
             actionDirection="horizontal"
             actionList={[
               {
@@ -124,7 +126,7 @@ const ListTile = createVisualComponent({
               },
               {
                 children: "Delete",
-                onClick: (e) => {handleDelete(props)},
+                onClick: (e) => {props.data.handlerMap.delete()},
                 colorScheme: "red",
                 significance: "highlighted",
               },

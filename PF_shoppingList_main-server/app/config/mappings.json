@@ -25,6 +25,56 @@
         "realization": "index.html",
         "httpMethod": "GET",
         "type": "UVE"
+      },
+      "shoppingList/create": {
+        "realization": "api/controllers/ShoppinglistController.shoppingListCreate",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "shoppingList/get": {
+        "realization": "api/controllers/ShoppinglistController.shoppingListGet",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "shoppingList/list": {
+        "realization": "api/controllers/ShoppinglistController.shoppingListList",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "shoppingList/update": {
+        "realization": "api/controllers/ShoppinglistController.shoppingListUpdate",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "shoppingList/delete": {
+        "realization": "api/controllers/ShoppinglistController.shoppingListDelete",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "listItem/create": {
+        "realization": "api/controllers/ListitemController.listItemCreate",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "listItem/get": {
+        "realization": "api/controllers/ListitemController.listItemGet",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "listItem/list": {
+        "realization": "api/controllers/ListitemController.listItemList",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "listItem/update": {
+        "realization": "api/controllers/ListitemController.listItemUpdate",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "listItem/delete": {
+        "realization": "api/controllers/ListitemController.listItemDelete",
+        "httpMethod": "POST",
+        "type": "CMD"
       }
     }
   }

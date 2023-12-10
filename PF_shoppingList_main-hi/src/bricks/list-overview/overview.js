@@ -1,5 +1,5 @@
 //@@viewOn:imports
-import { createComponent, Utils, useState } from "uu5g05";
+import { createComponent, Utils, useState, useDataList } from "uu5g05";
 import Config from "./config/config.js";
 import Uu5Elements from "uu5g05-elements";
 import Uu5Tiles from "uu5tilesg02";
@@ -32,7 +32,7 @@ const Overview1 = createComponent({
   defaultProps: {},
   //@@viewOff:defaultProps
 
-  render({ listdata, setData, user }) {
+  render(props) {
 
     //@@viewOn:private
     //@@viewOff:private
@@ -42,7 +42,7 @@ const Overview1 = createComponent({
 
     //@@viewOn:render
     const [activeFilterList, setActiveFilterList] = useState([{ key: "archived", value: [true] }]);
-    const DATA = listdata;
+    const DATA = props.listdata;
     const FILTER_DEFINITION_LIST = [
       {
         key: "archived",
@@ -78,7 +78,7 @@ const Overview1 = createComponent({
           {/* Top bar with Create new shop list button */}
           <Uu5Elements.Box>
               <Uu5Elements.Button onClick={() => setOpen(true)} size="xs" icon="mdi-plus-box">Create new shopping list</Uu5Elements.Button>
-              <CreateForm open={open} onClose={() => setOpen(false)} listdata={ listdata } setData={ setData } user={user} itemId={0} defaultText="" header="Create new shopping list" />
+              <CreateForm open={open} onClose={() => setOpen(false)} listdata={ props.listdata } shoppingListDataList={ props.shoppingListDataList } user={props.user} itemId={0} defaultText="" header="Create new shopping list" />
           </Uu5Elements.Box>
 
           {/* Grid to display Shopping Lists including Filter for non-Archived only */}
@@ -92,7 +92,7 @@ const Overview1 = createComponent({
                   tileMaxWidth={800}
                   tileSpacing={8}
               >
-                  <ListTile listdata={ listdata } setData={ setData } user={ user } />
+                  <ListTile listdata={ props.listdata } shoppingListDataList={ props.shoppingListDataList } user={ props.user } />
               </Uu5TilesElements.Grid>
           </Uu5Elements.Block>
       </Uu5Tiles.ControllerProvider>

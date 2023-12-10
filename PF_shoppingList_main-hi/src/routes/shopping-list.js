@@ -47,7 +47,7 @@ let ShoppingList = createVisualComponent({
     return (
       <>
         <RouteBar />
-        <Detail 
+        <Detail
           name={SLData.name}
         />
       </>

@@ -1,5 +1,5 @@
 //@@viewOn:imports
-import { createVisualComponent } from "uu5g05";
+import { createVisualComponent, Utils } from "uu5g05";
 import Config from "./config/config.js";
 import Uu5Forms from "uu5g05-forms";
 import Uu5Elements from "uu5g05-elements";
@@ -31,20 +31,20 @@ const CreateForm = createVisualComponent({
   render(props) {
     //@@viewOn:private
     const handleSubmit = (e) => {
-      let newListData = props.listdata;
+console.log(props);
     if (props.itemId === 0) {
         const newShoppingList = {};
-        newShoppingList.id = Math.trunc(Math. random() * 1000);
+        newShoppingList.id = Utils.String.generateId();
         newShoppingList.name = e.data.value.name;
         newShoppingList.owner = props.user;
         newShoppingList.member = [props.user];
         newShoppingList.archived = false;
-        newListData.push(newShoppingList);
+        console.log(newShoppingList)
+        props.shoppingListDataList.handlerMap.create(newShoppingList);
       } else {
         const idx = newListData.findIndex(x => x.id === props.itemId);
         newListData[idx].name = e.data.value.name;
       }
-      props.setData(newListData);
     }
 
     //@@viewOff:private
@@ -58,8 +58,9 @@ const CreateForm = createVisualComponent({
       <>
         <Uu5Forms.Form.Provider
           onSubmit={(e) => {
-            if (!navigator.onLine) throw new Error("Demo submit error example.");
-            handleSubmit(e);
+            console.log(props);
+            props.shoppingListDataList.handlerMap.create({ id: Utils.String.generateId(), name: e.data.value.name });
+            console.log(props);
             props.onClose();
           }}
         >
